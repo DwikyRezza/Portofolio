@@ -1,5 +1,5 @@
 # THE PORTFOLIO CONSTITUTION FOR Dwiky Rezza
-Version: 1.1 (System Design Constraint Specification)
+Version: 1.5 (System Design Constraint Specification — Hardened)
 
 ## 0. MENTAL MODEL & INTENT
 - Do not think of this page as a landing page or a personal website.
@@ -89,35 +89,26 @@ The right side must function as a 'Sticky Detail Inspector' panel that stays fix
 - For Mobile & Frontend Domains: Prioritize constraints regarding rendering latency, frame drop optimization, battery overheads, and local memory lifecycle state.
 - For AI, Vision, & Backend Domains: Prioritize constraints regarding thread isolation, processing concurrency, queue resource exhaustion, and state serialization guarantees.
 
-## 15. CONSTITUTIONAL PRIORITY ORDER (CONFLICT RESOLVER)
-In the event of an architectural or layout constraint conflict, the AI agent must enforce implementation strictly based on this priority matrix:
-- LEVEL 1 (HIGHEST) — Runtime Safety: Zero-flicker routing, build compilation success, type-safety, and unbroken navigation execution.
-- LEVEL 2 — Structural Determinism: Explicit file-local reasoning, folder co-location, and deterministic AI agent readability.
-- LEVEL 3 — Visual Integrity: Adherence to the 4px spacing rhythm, 1px structural hairline borders, and typography scale rules.
-- LEVEL 4 (LOWEST) — Content Philosophy: Anti-generic engineering tone and domain-honest narratives.
-
-## 16. DELIBERATE INFRASTRUCTURE REDUCTION
-- The restriction against `middleware.ts` is explicitly recognized as a deliberate architectural trade-off designed to lower total system entropy and maximize file-local predictability. It is an intentional project constraint, not a framework limitation.
-
 ## 15. CONSTITUTIONAL PRIORITY SYSTEM & INTRA-LEVEL TIE BREAKER
 In the event of an architectural, technical, or design constraint conflict, the AI agent must compute implementations based on this strict hierarchical matrix:
 
-- LEVEL 1A — Runtime Execution Safety (HIGHEST): Zero-flicker routing, absolute navigation predictability, and fluid state synchronization.
-- LEVEL 1B — Build Integrity Safety: Compilation success, strict TypeScript compliance, and zero build-time warnings.
-- LEVEL 2 — Structural Determinism: Explicit file-local reasoning, folder co-location, and local encapsulation.
-- LEVEL 3 — Visual System Integrity: Adherence to the 4px spacing rhythm, 1px structural hairline borders, and typography roles.
-- LEVEL 4 (LOWEST) — Content Philosophy: Anti-generic engineering tone and domain-honest narratives.
+- LEVEL 1A — Runtime Execution Safety (HIGHEST PRIORITY): Guarantees zero-flicker routing, absolute navigation predictability, correct state transitions, and stable runtime behavior. Any decision affecting user-facing execution flow MUST prioritize this level above all others.
+- LEVEL 1B — Build Integrity Safety: Ensures compilation success, strict TypeScript compliance, type correctness, and absence of build-time warnings or errors. This level governs static correctness of the system.
+- LEVEL 2 — Structural Determinism: Enforces explicit file-local reasoning, strict folder co-location, predictable module boundaries, and elimination of hidden or implicit control flows.
+- LEVEL 3 — Visual System Integrity: Enforces 4px spacing rhythm, 1px hairline border system, typography hierarchy rules, and deterministic visual layout structure.
+- LEVEL 4 (LOWEST PRIIVITY) — Content Philosophy: Governs anti-generic writing style, engineering tone enforcement, and domain-honest narrative constraints. This level is strictly non-structural and non-executable.
 
 ### INTRA-LEVEL TIE BREAKER RULES:
-- Level 1A always overrides Level 1B in raw execution strategy; runtime behavior stability must never be compromised for speculative build-time patterns.
-- Level 2 (Structural Determinism) strictly overrides Level 3 (Visual Integrity) when layout stability or file readability is threatened.
-- Level 4 (Content Philosophy) is entirely subordinate and must never override any structural, visual, or runtime integrity constraints.
+- LEVEL 1A overrides LEVEL 1B in execution strategy decisions: Runtime stability and user-facing navigation correctness must never be sacrificed for compile-time optimizations or speculative type strictness patterns.
+- LEVEL 2 overrides LEVEL 3 when structural stability is at risk: File locality, module clarity, and deterministic folder structure take precedence over visual presentation consistency.
+- LEVEL 4 must never override any higher-level constraint under any circumstance: Content philosophy is purely descriptive and must never influence runtime, structural, or visual system decisions.
 
 ## 16. VERIFIABLE ARCHITECTURAL TRADEOFF GUARANTEES
-The explicit restriction against `middleware.ts` is a deliberate architectural trade-off. This structural reduction enforces the following verified system behaviors:
-- Guaranteed File-Local Reasoning: The entry routing path must be fully understood by reading `src/app/page.tsx` alone.
-- No Hidden Routing Graphs: No network-layer transformations can mutate downstream route delivery covertly.
-- Deterministic AI Navigation Model: AI agents are restricted to explicit filesystem boundaries, completely eliminating unexpected cross-layer routing regressions.
+The explicit restriction against `middleware.ts` is an intentional architectural trade-off, not a framework limitation. This constraint enforces a deliberate reduction in system complexity and guarantees the following verifiable system properties:
+- Guaranteed File-Local Reasoning: The complete routing and entry behavior of the system can be fully understood by inspecting `src/app/page.tsx` and associated server components without requiring external control plane context.
+- No Hidden Routing Graphs: The system contains no edge-layer or network-layer transformations that mutate or intercept routing behavior outside the explicit App Router structure.
+- Deterministic AI Navigation Model: AI agents operate strictly within filesystem-defined boundaries, eliminating ambiguity caused by global middleware interception layers or implicit routing logic injection.
+- Reduced System Entropy by Design: The absence of middleware enforces a single, traceable control flow path, improving predictability, debuggability, and AI-assisted code generation stability.
 
 ## 17. ADDITIVE LAYOUT RESPONSIBILITY SEPARATION (OPTION A)
 - Layout inheritance in the Next.js App Router is strictly additive. To prevent double-wrapping and breaking sticky layouts, responsibilities are separated as follows:
@@ -129,18 +120,27 @@ The explicit restriction against `middleware.ts` is a deliberate architectural t
 - It must only contain primitive spacing systems, design color tokens, custom font-weight mapping, and uniform radii definition. 
 - Writing specific component layouts or utility overrides inside this file is strictly prohibited. Component-specific presentation must be handled purely by Tailwind utility classes within the feature modules.
 
-## 19. FRAMEWORK CORRECTNESS ESCAPE HATCH
-- To prevent AI agent over-compliance freeze or the generation of unnatural workarounds, runtime framework correctness takes absolute precedence.
-- If a strict constitutional rule literally conflicts with standard Next.js App Router framework behavior, the agent must prefer framework correctness over a literal interpretation of the law.
-
-## 19. BOUNDED FRAMEWORK ESCAPE HATCH
+## 19. BOUNDED FRAMEWORK ESCAPE HATCH (DETERMINISTIC VALIDATION)
 - To prevent AI agent over-compliance freeze or the generation of unnatural workarounds, runtime framework feasibility conflicts take precedence over literal rules.
-- **Strict Boundary**: This escape hatch ONLY applies to low-level runtime compilation and technical feasibility constraints. It is strictly FORBIDDEN from overriding the core architectural intent (e.g., local explicit control planes, server-only redirect patterns, and monochrome constraints). 
-- If an agent utilizes this escape hatch, it must explicitly document the technical trade-off within a localized code comment without violating the structural priority system.
+- **Deterministic Trigger**: This escape hatch ONLY applies when a violation is strictly required for framework compliance OR build execution correctness verified directly by Next.js runtime behavior. It is strictly FORBIDDEN from being activated based on subjective interpretation or convenience.
+- **Strict Boundary**: This escape hatch is entirely banned from overriding core architectural intents (local explicit control planes, server-only redirect patterns, and monochrome constraints).
+- If an agent utilizes this escape hatch, it must explicitly document the technical compilation trade-off within a localized code comment.
 
-## 20. FORBIDDEN PATTERN RUNTIME DETECTION (ANTI-DRIFT GUARD)
-The system strictly outlaws the following execution patterns to maintain total structural integrity. AI agents must flag any occurrence of these patterns as an absolute architectural failure:
-- **Pattern Alpha (Client-Side Gatekeeping)**: Using `"use client"`, `useEffect`, or `useRouter` at the root routing gateway layer (`src/app/page.tsx`).
-- **Pattern Beta (Global Implicit Inversion)**: Injecting any global `middleware.ts` configuration at the root or edge layer of the repository.
-- **Pattern Gamma (Layout Leaks & Double Wrappers)**: Introducing padding, margins, visual elements, or page-specific styling containers inside the pure system shell (`src/app/layout.tsx`).
-- **Pattern Delta (CSS Creep)**: Defining custom utility layout classes or element-specific selectors directly inside the design token registry (`src/app/globals.css`).
+## 20. FORBIDDEN PATTERN RUNTIME DETECTION & SEVERITY CLASSIFICATION
+The system enforces an explicit severity classification matrix to govern anti-drift constraints. Any detected violation must be categorized and handled according to the following deterministic protocols:
+
+### SEV-1 (FATAL) — CORE ROUTING & AUTHORITY BOUNDARY
+- **Patterns**: Pattern Alpha (Client-Side Gatekeeping via `"use client"`, `useEffect`, or `useRouter` inside `src/app/page.tsx`) or Pattern Beta (Global Implicit Inversion via adding `middleware.ts`).
+- **Enforcement Action**: Immediate execution halt. The implementation is an absolute architectural failure and must be rewritten from scratch.
+
+### SEV-2 (CRITICAL) — LAYOUT STRUCTURE VIOLATION
+- **Pattern**: Pattern Gamma (Layout Leaks & Double Wrappers via introducing padding, margins, structural containers, or page-specific visual styling inside the pure system shell `src/app/layout.tsx`).
+- **Enforcement Action**: Immediate execution halt. The agent is strictly FORBIDDEN from directly mutating the directory tree. It must issue a Mandatory Refactor Instruction to the developer, blocking any further code generation until the presentation container is stripped from the root shell and co-located down to `src/app/[lng]/layout.tsx` by human or approved scaffold automation.
+
+### SEV-3 (WARNING) — CODESPACE & CSS CREEP
+- **Pattern**: Pattern Delta (CSS Creep via defining custom utility layout classes or specific element selectors inside the design token registry `src/app/globals.css`).
+- **Enforcement Action**: Flag a non-fatal warning during code generation. The agent must refactor the injected style back into inline Tailwind utility classes inside the presentation layer.
+
+### SEV-4 (STYLE DRIFT) — TYPOGRAPHY INCONSISTENCY
+- **Pattern**: Deviating from the strict typography scale or mapping font-weight values outside the allowed 4px spacing/design scales.
+- **Enforcement Action**: Auto-correct values to the nearest legal design token defined in the system.
