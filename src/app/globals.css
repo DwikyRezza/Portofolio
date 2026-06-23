@@ -1,9 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-body {
-  background-color: #ffffff;
-  color: #000000;
-  font-family: sans-serif;
+@theme {
+  /* Monochrome system tokens */
+  --color-ink-black: #000000;
+  --color-paper-white: #ffffff;
+  --color-charcoal: #333333;
+  --color-border-gray: #e5e5e5;
+
+  /* Reserved single accent (kernel §6). Exposed as bg-glide-teal / text-glide-teal. */
+  --color-glide-teal: #71eaee;
+
+  /* Font families */
+  --font-display: "GT Sectra", "Tobias", Georgia, serif;
+  --font-workhorse: "Inter", "Söhne", system-ui, -apple-system, sans-serif;
+
+  /* Custom font weight */
+  --font-weight-medium-575: 575;
+
+  /* Uniform radius */
+  --radius-md: 6px;
+}
+
+/* Token-only base binding. No layout, no component selectors (kernel Rule 18 / SEV-3). */
+@layer base {
+  body {
+    font-family: var(--font-workhorse);
+    background-color: var(--color-paper-white);
+    color: var(--color-ink-black);
+  }
 }
