@@ -1,31 +1,9 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  /* Monochrome Glideapps Theme Colors */
-  --color-ink-black: #000000;
-  --color-paper-white: #ffffff;
-  --color-charcoal: #333333;
-  --color-border-gray: #e5e5e5;
-  
-  /* Accent Color (Strictly isolated to Out Link / Accent Action Fills) */
-  --color-glide-teal: #71eaee;
-
-  /* Font Families */
-  --font-display: "GT Sectra", "Tobias", Georgia, serif;
-  --font-workhorse: "Inter", "Söhne", system-ui, -apple-system, sans-serif;
-
-  /* Custom Font Weights */
-  --font-weight-medium-575: 575;
-
-  /* Custom Border Radius */
-  --radius-md: 6px;
-}
-
-/* Custom Base Styles for Variable Fonts */
-@layer base {
-  body {
-    font-family: var(--font-workhorse);
-    background-color: var(--color-paper-white);
-    color: var(--color-ink-black);
-  }
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: sans-serif;
 }
