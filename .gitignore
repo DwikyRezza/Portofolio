@@ -1,0 +1,7 @@
+# Speckit folders and configuration
+.specify/
+specs/
+plans/
+task/
+.github/
+.vscode/
